@@ -1,0 +1,27 @@
+{
+  "name": "roundcounter",
+  "version": "1.0.0",
+  "description": "Enter a topic and count the no of times you did it",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/server.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jayaanth/roundCounter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jayaanth/roundCounter/issues"
+  },
+  "homepage": "https://github.com/Jayaanth/roundCounter#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1"
+  }
+}

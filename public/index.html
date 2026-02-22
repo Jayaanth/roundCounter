@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoundCounter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar / Activity List -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">⏱ RoundCounter</h1>
+        <button class="icon-btn close-sidebar" id="closeSidebar" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <div class="new-activity">
+        <input
+          type="text"
+          id="activityInput"
+          placeholder="New activity name…"
+          maxlength="60"
+          autocomplete="off"
+        />
+        <button id="addActivityBtn" class="btn btn-primary">Add</button>
+      </div>
+
+      <ul class="activity-list" id="activityList" role="list"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main" id="main">
+      <!-- Top bar for small screens -->
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open activities">☰</button>
+        <span class="topbar-title" id="topbarTitle">RoundCounter</span>
+      </header>
+
+      <!-- Empty state -->
+      <section class="empty-state" id="emptyState">
+        <div class="empty-icon">🏃</div>
+        <p>Select an activity from the sidebar<br/>or create a new one to get started.</p>
+        <button class="btn btn-primary show-sidebar-btn" id="showSidebarBtn">+ New Activity</button>
+      </section>
+
+      <!-- Counter view -->
+      <section class="counter-view hidden" id="counterView">
+        <div class="counter-header">
+          <h2 class="activity-title" id="activityTitle"></h2>
+          <button class="btn btn-outline btn-sm" id="viewHistoryBtn">History</button>
+        </div>
+
+        <div class="tap-area" id="tapArea" role="button" tabindex="0" aria-label="Tap to count a lap">
+          <div class="count-display" id="countDisplay">0</div>
+          <div class="tap-hint">TAP TO COUNT</div>
+        </div>
+
+        <div class="last-lap" id="lastLap"></div>
+      </section>
+
+      <!-- History view -->
+      <section class="history-view hidden" id="historyView">
+        <div class="history-header">
+          <button class="icon-btn back-btn" id="backBtn" aria-label="Back to counter">←</button>
+          <h2 id="historyTitle"></h2>
+        </div>
+        <div class="history-stats" id="historyStats"></div>
+        <ul class="lap-list" id="lapList" role="list"></ul>
+        <p class="no-laps hidden" id="noLaps">No laps recorded yet.</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Overlay for sidebar on small screens -->
+  <div class="overlay hidden" id="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
